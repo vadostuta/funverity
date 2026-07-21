@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "cli": "nx",
+  "$id": "oneshot-e2e",
+  "type": "object",
+  "properties": {
+    "story": {
+      "type": "string",
+      "description": "Plain-english user story to turn into an e2e test",
+      "x-prompt": "User story (plain english):"
+    },
+    "featureLib": {
+      "type": "string",
+      "description": "Feature library name (e.g. invoicing-feature-list). Omit to auto-detect from the story."
+    },
+    "referenceSpec": {
+      "type": "string",
+      "description": "Path to an existing Playwright spec used as style reference.",
+      "default": "apps/shop-e2e/src/financing.spec.ts"
+    },
+    "model": {
+      "type": "string",
+      "description": "Model alias passed to the nested `claude -p` invocation (e.g. opus, sonnet, haiku).",
+      "default": "sonnet"
+    },
+    "timeoutMinutes": {
+      "type": "number",
+      "description": "Kill the nested claude process if it runs longer than this many minutes.",
+      "default": 10
+    },
+    "skipPermissions": {
+      "type": "boolean",
+      "description": "Pass --dangerously-skip-permissions to the nested claude so it doesn't prompt for tool approvals. Recommended for demos.",
+      "default": true
+    },
+    "maxRetries": {
+      "type": "number",
+      "description": "Parent-level retry attempts if static or playwright verification fails. Each retry re-invokes claude with the captured error output as context. 0 = no retry (report FAIL after first attempt).",
+      "default": 2
+    }
+  },
+  "required": ["story"]
+}

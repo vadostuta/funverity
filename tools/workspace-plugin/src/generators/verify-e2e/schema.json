@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "cli": "nx",
+  "$id": "verify-e2e",
+  "type": "object",
+  "properties": {
+    "file": {
+      "type": "string",
+      "description": "Path to the Playwright spec file to verify.",
+      "x-prompt": "Spec file path (e.g., apps/shop-e2e/src/foo.spec.ts):"
+    },
+    "heal": {
+      "type": "boolean",
+      "description": "If verification fails, spawn a nested Claude with the captured error output and let it fix the spec in place. Off by default so CI stays a pure check.",
+      "default": false
+    },
+    "maxRetries": {
+      "type": "number",
+      "description": "Only used with --heal. Number of heal attempts after the initial verify fails. Each heal re-invokes Claude with fresh error context. 0 = one heal attempt total.",
+      "default": 2
+    },
+    "model": {
+      "type": "string",
+      "description": "Only used with --heal. Model alias passed to the nested `claude -p` invocation (e.g. opus, sonnet, haiku).",
+      "default": "sonnet"
+    },
+    "timeoutMinutes": {
+      "type": "number",
+      "description": "Only used with --heal. Kill the nested claude process if it runs longer than this many minutes.",
+      "default": 10
+    },
+    "skipPermissions": {
+      "type": "boolean",
+      "description": "Only used with --heal. Pass --dangerously-skip-permissions to the nested claude so it doesn't prompt for tool approvals. Recommended for demos.",
+      "default": true
+    }
+  },
+  "required": ["file"]
+}

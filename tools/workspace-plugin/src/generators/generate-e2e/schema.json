@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "cli": "nx",
+  "$id": "generate-e2e",
+  "type": "object",
+  "properties": {
+    "story": {
+      "type": "string",
+      "description": "Plain-english user story to turn into an e2e test",
+      "x-prompt": "User story (plain english):"
+    },
+    "featureLib": {
+      "type": "string",
+      "description": "Feature library name (e.g. invoicing-feature-list). Omit to auto-detect from the story."
+    },
+    "referenceSpec": {
+      "type": "string",
+      "description": "Path to an existing Playwright spec used as style reference.",
+      "default": "apps/shop-e2e/src/financing.spec.ts"
+    },
+    "verify": {
+      "type": "boolean",
+      "description": "After composing the prompt, run static verification on the predicted spec path (apps/shop-e2e/src/<slug>.spec.ts) if it exists. Set false to skip.",
+      "default": true
+    }
+  },
+  "required": ["story"]
+}

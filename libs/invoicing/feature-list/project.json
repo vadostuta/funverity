@@ -1,0 +1,13 @@
+{
+  "name": "invoicing-feature-list",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/invoicing/feature-list/src",
+  "prefix": "lib",
+  "projectType": "library",
+  "tags": ["scope:invoicing", "type:feature"],
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}

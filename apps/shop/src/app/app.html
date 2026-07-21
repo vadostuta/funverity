@@ -1,0 +1,14 @@
+<header class="app-header">
+  <div class="container">
+    <h1>{{ title }}</h1>
+    <nav>
+      <a routerLink="/invoices" routerLinkActive="active">Invoices</a>
+      <a routerLink="/settings" routerLinkActive="active">Settings</a>
+    </nav>
+    <span class="active-role">{{ authStore.currentUser()?.name }}</span>
+  </div>
+</header>
+
+<main class="app-main">
+  <router-outlet></router-outlet>
+</main>

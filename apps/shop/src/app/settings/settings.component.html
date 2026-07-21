@@ -1,0 +1,31 @@
+<div class="settings-page">
+  <h2>Settings</h2>
+
+  <section class="role-section">
+    <h3>Active Role</h3>
+    <p class="role-hint">Switch roles to simulate different user permissions in the app.</p>
+
+    <div class="role-cards">
+      @for (role of roles; track role.id) {
+        <button
+          class="role-card"
+          [class.active]="authStore.activeRole() === role.id"
+          (click)="selectRole(role.id)"
+        >
+          <div class="role-card-header">
+            <span class="role-name">{{ role.label }}</span>
+            @if (authStore.activeRole() === role.id) {
+              <span class="role-active-badge">Active</span>
+            }
+          </div>
+          <p class="role-description">{{ role.description }}</p>
+          <ul class="permission-list">
+            @for (perm of role.permissions; track perm) {
+              <li>{{ perm }}</li>
+            }
+          </ul>
+        </button>
+      }
+    </div>
+  </section>
+</div>

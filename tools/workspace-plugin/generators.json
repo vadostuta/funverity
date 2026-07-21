@@ -1,0 +1,19 @@
+{
+  "generators": {
+    "generate-e2e": {
+      "factory": "./src/generators/generate-e2e/index",
+      "schema": "./src/generators/generate-e2e/schema.json",
+      "description": "Compose an AI prompt for a Playwright e2e test from a plain-english user story. Optionally verify a generated spec file."
+    },
+    "verify-e2e": {
+      "factory": "./src/generators/verify-e2e/index",
+      "schema": "./src/generators/verify-e2e/schema.json",
+      "description": "Run static verification (ESLint + tsc + structural checks) on a Playwright spec file."
+    },
+    "oneshot-e2e": {
+      "factory": "./src/generators/oneshot-e2e/index",
+      "schema": "./src/generators/oneshot-e2e/schema.json",
+      "description": "One-shot demo: compose the prompt, invoke Claude headlessly to write the spec, then run static verification."
+    }
+  }
+}

@@ -1,0 +1,59 @@
+.app-header {
+  background: #2c3e50;
+  color: white;
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.app-header .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.app-header nav {
+  display: flex;
+  gap: 8px;
+  flex: 1;
+}
+
+.app-header nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.app-header nav a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.app-header nav a.active {
+  background: #3498db;
+}
+
+.active-role {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  white-space: nowrap;
+}
+
+.app-main {
+  min-height: 100vh;
+  background: #f5f5f5;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}

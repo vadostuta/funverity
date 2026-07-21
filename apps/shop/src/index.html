@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>shop</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--
+      Starting CSP. Delivered as a <meta> because this SPA is served statically;
+      when a backend is in front, move this to a Content-Security-Policy response
+      header so we can also use frame-ancestors, report-to, and per-request nonces.
+      'unsafe-inline' in style-src is required because Angular injects component
+      styles as <style> tags at runtime; replace with 'nonce-...' once we can
+      generate a nonce per response and pass it via ngCspNonce.
+    -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
+        default-src 'self';
+        script-src 'self';
+        style-src 'self' 'unsafe-inline';
+        img-src 'self' data:;
+        font-src 'self';
+        connect-src 'self';
+        form-action 'self';
+        base-uri 'self';
+        object-src 'none'
+      "
+    />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  </head>
+  <body>
+    <app-root></app-root>
+  </body>
+</html>

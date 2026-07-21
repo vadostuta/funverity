@@ -1,0 +1,21 @@
+<div class="invoicing-list">
+  <lib-invoice-filters
+    [search]="store.filter().search"
+    [status]="store.filter().status"
+    (searchChange)="onSearchChange($event)"
+    (statusChange)="onStatusChange($event)"
+  />
+
+  @if (store.loading()) {
+    <p>Loading invoices…</p>
+  } @else {
+    <lib-invoice-list
+      [rows]="rows()"
+      (requestFinancing)="requestFinancing($event)"
+    />
+
+    @if (store.requestStatus() === 'error') {
+      <p class="error">{{ store.requestError() }}</p>
+    }
+  }
+</div>

@@ -1,0 +1,9 @@
+{
+  "name": "shop-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/shop-e2e/src",
+  "projectType": "application",
+  "implicitDependencies": ["shop"],
+  "tags": ["scope:shop", "type:e2e"],
+  "targets": {}
+}
