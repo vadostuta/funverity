@@ -2,6 +2,9 @@
 
 Nx 23 Angular 21 monorepo for the SCF invoice-financing feature.
 
+And demo prep for Nn Wroclaw meetup
+slides: https://docs.google.com/presentation/d/e/2PACX-1vQkThTUfZ8-aKtJtj_Q9MxNv49f6MD5OqUv8TMLZF3so_t2Ri7BnN6C8p3tsSAqLA/pub?start=false&loop=false&delayms=3000
+
 ---
 
 ## Quick Start
