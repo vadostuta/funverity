@@ -51,4 +51,4 @@ yarn-error.log*
 pnpm-debug.log*
 
 # Playwright MCP session artifacts (console logs + accessibility snapshots)
-.playwright-mcp/
+.playwright-mcp/ax_in_nx.pptx
